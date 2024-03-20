@@ -1,0 +1,59 @@
+h1 {
+  color: purple;
+  border-bottom: 1px solid black;
+}
+
+pre {
+  font-size: 20px;
+  color: blueviolet;
+}
+
+body {
+  background-color: burlywood;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Centraliza os itens ao longo do eixo principal */
+}
+
+.box {
+  height: 50px;
+  width: calc(
+    33.33% - 6px
+  ); /* 33.33% de largura para cada caixa, subtraindo a margem */
+  margin: 5px;
+  box-sizing: border-box; /* incluir borda e preenchimento na largura e altura */
+}
+
+.box-green {
+  background-color: greenyellow;
+}
+
+.box-violete {
+  background-color: blueviolet;
+}
+
+.box-cian {
+  background-color: #00ffff;
+}
+
+button {
+  background-color: dodgerblue;
+}
+
+#sessao-unica {
+  color: chartreuse;
+  font-size: 56px;
+}
+
+.li-lista {
+  color: coral;
+}
+
+.menu {
+  list-style-type: none;
+  padding: 0;
+  text-align: center;
+}
