@@ -1,70 +1,130 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/x-icon" href="foto/icon.ico" />
-    <title>Lojinha do Kevyn</title>
-    <link rel="stylesheet" href="loja.css" />
-  </head>
-  <body>
-    <h1>Lojinha do Kevyn</h1>
-    <img src="foto/kuromi.gif" alt="Kuromi" height="100" width="100" />
-    <center>
-      <img src="foto/lojas.png" alt="Loja" width="600" height="200" />
-    </center>
-    <pre>
-        Olá seja bem vindo a minha loja!
-        aqui vendemos produtos para pc
-        temos desde perifericos até hardware!
-        venha conferir!
-    </pre>
-    <ul class="menu">
-      <li><a href="#top">Home</a></li>
-      <li><a href="#sobre-nos">Sobre nós</a></li>
-      <li><a href="#promocoes">Promoções</a></li>
-      <li><a href="#produtos">Produtos</a></li>
-      <li>
-        <a href="https://www.amazon.com.br/" target="_blank"
-          >Conheça a Amazon</a
-        >
-      </li>
-      <li>
-        <a href="estoque.html" target="_blank">Gerenciar nosso estoque</a>
-      </li>
-    </ul>
-    <h2 id="sobre-nos">Sobre nós</h2>
-    <pre>
-        Somos uma empressa iniciante 
-        focada na distribuição
-        de hardware e perifericos
-    </pre>
-    <h2 id="promocoes">Promoções</h2>
-    <center><p>Confira as nossas Promoções imperdíveis!</p></center>
-    <center>
-      <p>
-        Monitor de <del style="color: red; font-size: 16px">R$ 1299,00</del> Por
-        apenas R$ 879,00
-      </p>
-    </center>
+<!DOCTYPE html> <!-- Declaração do tipo de documento -->
+<html lang="pt-BR"> <!-- Declaração da linguagem do documento -->
+<head>
+<meta charset="UTF-8"> <!-- Definição do conjunto de caracteres -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configuração da viewport para dispositivos móveis -->
+<title>Projetos do Kevyn</title> <!-- Título da página -->
+<link rel="icon" type="image/x-icon" href="foto/icon.ico" /> <!-- Ícone da página -->
+<style>
+  body {
+    background-color: #7b68ee; /* Cor de fundo do corpo */
+    margin: 0; /* Removendo margens padrão */
+    padding: 0; /* Removendo preenchimentos padrão */
+    display: flex; /* Utilizando o modelo de layout flexível */
+    flex-direction: column; /* Direção do layout flexível */
+    align-items: center; /* Alinhamento dos itens no eixo principal */
+    justify-content: flex-start; /* Alinhamento dos itens no eixo secundário */
+    min-height: 100vh; /* Altura mínima da tela visível */
+    position: relative; /* Posição relativa para elementos absolutos */
+  }
+  h1 {
+    color: #ffffff; /* Cor do texto do título */
+    font-family: Arial, sans-serif; /* Fonte do título */
+    text-align: center; /* Alinhamento do texto do título */
+    margin-top: 20px; /* Margem superior do título */
+    text-shadow: rgb(165, 6, 6) 0.1em 0.1em 0.2em; /* Sombra do texto */
+  }
+  h2 {
+    text-align: center; /* Alinhamento do texto do subtítulo */
+    text-shadow: rgb(165, 6, 6) 0.1em 0.1em 0.2em; /* Sombra do texto */
+    margin: 20px auto; /* Margem automática para centralização vertical */
+  }
+  .container {
+    display: flex; /* Utilizando o modelo de layout flexível */
+    flex-wrap: wrap; /* Permitindo a quebra de linha dos elementos */
+    justify-content: center; /* Alinhamento dos elementos no centro */
+    margin-top: 20px; /* Margem superior do container */
+  }
+  .link-box {
+    width: 150px; /* Largura das caixas de link */
+    height: 100px; /* Altura das caixas de link */
+    margin: 10px; /* Margem das caixas de link */
+    background-color: #fff; /* Cor de fundo das caixas de link */
+    border-radius: 10px; /* Raio das bordas das caixas de link */
+    display: flex; /* Utilizando o modelo de layout flexível */
+    align-items: center; /* Alinhamento dos itens no eixo principal */
+    justify-content: center; /* Alinhamento dos itens no eixo secundário */
+    text-align: center; /* Alinhamento do texto das caixas de link */
+    cursor: pointer; /* Cursor ao passar sobre as caixas de link */
+    text-decoration: none; /* Removendo sublinhado */
+    color: #030303; /* Cor do texto das caixas de link */
+    font-family: Arial, sans-serif; /* Fonte do texto das caixas de link */
+    font-size: 14px; /* Tamanho da fonte das caixas de link */
+  }
+  .link-box:hover {
+    background-color: #aaaaaa; /* Cor de fundo das caixas de link ao passar o mouse */
+  }
+  .photo-container {
+    display: flex; /* Utilizando o modelo de layout flexível */
+    flex-direction: column; /* Direção do layout flexível */
+    align-items: center; /* Alinhamento dos itens no eixo principal */
+    margin-top: 20px; /* Margem superior do container de fotos */
+  }
+  .photo-container img {
+    width: 150px; /* Largura das imagens */
+    height: auto; /* Altura automática das imagens */
+    margin: 10px 0; /* Margem das imagens */
+    border-radius: 0; /* Removendo arredondamento das bordas */
+  }
+  hr {
+    width: 100%; /* Largura da linha horizontal */
+    margin: 20px 0; /* Margem superior e inferior da linha horizontal */
+    border: none; /* Removendo borda da linha horizontal */
+    border-top: 1px solid #000; /* Cor e estilo da linha horizontal */
+  }
 
-    <center>
-      <p>
-        Placa-mãe de
-        <del style="color: red; font-size: 16px">R$ 755,00</del> Por apenas R$
-        529,99
-      </p>
-    </center>
-    <h2 id="produtos">Produtos</h2>
-    <center>
-      <ul>
-        <li>Monitor</li>
-        <li>Placa de vídeo</li>
-        <li>Processador</li>
-        <li>Placa-mãe</li>
-        <li>Impressora</li>
-        <li>Memoria-ram</li>
-      </ul>
-    </center>
-  </body>
+  /* Estilos para tornar o site responsivo */
+  @media screen and (max-width: 600px) {
+    .link-box {
+      width: 120px; /* Largura das caixas de link para telas menores */
+      height: 80px; /* Altura das caixas de link para telas menores */
+    }
+    .link-box a {
+      font-size: 12px; /* Tamanho da fonte dos links para telas menores */
+    }
+    .photo-container img {
+      width: 150px; /* Largura das imagens para telas menores */
+      height: auto; /* Altura automática das imagens para telas menores */
+      margin: 5px 0; /* Margem das imagens para telas menores */
+    }
+    .footer {
+      position: absolute; /* Posicionamento absoluto do rodapé */
+      bottom: 10px; /* Distância do rodapé em relação ao fundo */
+      left: 10px; /* Distância do rodapé em relação à esquerda */
+      display: flex; /* Utilizando o modelo de layout flexível */
+      flex-direction: column; /* Direção do layout flexível */
+      align-items: flex-start; /* Alinhamento dos itens no eixo principal */
+      color: white; /* Cor do texto do rodapé */
+    }
+  }
+</style>
+</head>
+<body>
+<h1>Projetos do Kevyn</h1> <!-- Título da página -->
+<div class="photo-container"> <!-- Container das fotos -->
+  <img src="foto/kuromi.gif" alt="Foto do Kevyn"> <!-- Foto 1 -->
+  <img src="foto/projetos.png" alt="Outra foto do Kevyn" style="width: 300px;"> <!-- Foto 2 -->
+  <h2>
+    Olá seja bem vindo aos meu projetos! <!-- Subtítulo -->
+  </h2>
+</div>
+<div class="container"> <!-- Container das caixas de link -->
+  <a class="link-box" href="http://anime.tsukiscarso.shop" target="_blank">
+    Calculadora <!-- Link 1 -->
+  </a>
+  <a class="link-box" href="https://kscarso.github.io/mesa/" target="_blank">
+    mesa farta <!-- Link 2 -->
+  </a>
+</div>
+ <!-- Linha horizontal -->
+<div class="footer"> <!-- Rodapé -->
+  <p>© tsukiscarso</p> <!-- Texto de copyright -->
+  <div style="display: flex; align-items: center;">
+    <p style="margin-right: 10px;">Construído por Kevyn Scarso</p> <!-- Texto "Construído por Kevyn Scarso" -->
+    <a href="https://www.instagram.com/kscarso.wttx" target="_blank">
+      <img src="foto/instagram.png" alt="Instagram" style="width: 20px;"> <!-- Ícone do Instagram -->
+    </a>
+  </div>
+</div>
+</body>
 </html>
