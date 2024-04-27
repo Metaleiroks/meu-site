@@ -16,6 +16,11 @@
     justify-content: flex-start; /* Alinhamento dos itens no eixo secundário */
     min-height: 100vh; /* Altura mínima da tela visível */
     position: relative; /* Posição relativa para elementos absolutos */
+    background-image: url(foto/fundo.jpg);
+        background-repeat: no-repeat;
+        background-position: px 100px;
+        background-size: 1366px 768px;
+        position: relative; /* Adicionado para posicionar o rodapé corretamente */
   }
   h1 {
     color: #ffffff; /* Cor do texto do título */
@@ -29,31 +34,17 @@
     text-shadow: rgb(165, 6, 6) 0.1em 0.1em 0.2em; /* Sombra do texto */
     margin: 20px auto; /* Margem automática para centralização vertical */
   }
-  .container {
+  .botões {
     display: flex; /* Utilizando o modelo de layout flexível */
     flex-wrap: wrap; /* Permitindo a quebra de linha dos elementos */
     justify-content: center; /* Alinhamento dos elementos no centro */
     margin-top: 20px; /* Margem superior do container */
   }
-  .link-box {
-    width: 150px; /* Largura das caixas de link */
-    height: 100px; /* Altura das caixas de link */
-    margin: 10px; /* Margem das caixas de link */
-    background-color: #fff; /* Cor de fundo das caixas de link */
-    border-radius: 10px; /* Raio das bordas das caixas de link */
-    display: flex; /* Utilizando o modelo de layout flexível */
-    align-items: center; /* Alinhamento dos itens no eixo principal */
-    justify-content: center; /* Alinhamento dos itens no eixo secundário */
-    text-align: center; /* Alinhamento do texto das caixas de link */
-    cursor: pointer; /* Cursor ao passar sobre as caixas de link */
-    text-decoration: none; /* Removendo sublinhado */
-    color: #030303; /* Cor do texto das caixas de link */
-    font-family: Arial, sans-serif; /* Fonte do texto das caixas de link */
-    font-size: 14px; /* Tamanho da fonte das caixas de link */
+
+  .botões button {
+    margin: 0 3px; /* Adicionando margem entre os botões */
   }
-  .link-box:hover {
-    background-color: #aaaaaa; /* Cor de fundo das caixas de link ao passar o mouse */
-  }
+  
   .photo-container {
     display: flex; /* Utilizando o modelo de layout flexível */
     flex-direction: column; /* Direção do layout flexível */
@@ -66,41 +57,214 @@
     margin: 10px 0; /* Margem das imagens */
     border-radius: 0; /* Removendo arredondamento das bordas */
   }
-  hr {
-    width: 100%; /* Largura da linha horizontal */
-    margin: 20px 0; /* Margem superior e inferior da linha horizontal */
-    border: none; /* Removendo borda da linha horizontal */
-    border-top: 1px solid #000; /* Cor e estilo da linha horizontal */
-  }
-
+ 
   /* Estilos para tornar o site responsivo */
   @media screen and (max-width: 600px) {
-    .link-box {
-      width: 120px; /* Largura das caixas de link para telas menores */
-      height: 80px; /* Altura das caixas de link para telas menores */
-    }
-    .link-box a {
-      font-size: 12px; /* Tamanho da fonte dos links para telas menores */
-    }
+    
     .photo-container img {
       width: 150px; /* Largura das imagens para telas menores */
       height: auto; /* Altura automática das imagens para telas menores */
       margin: 5px 0; /* Margem das imagens para telas menores */
     }
-    .footer {
-      position: absolute; /* Posicionamento absoluto do rodapé */
-      bottom: 10px; /* Distância do rodapé em relação ao fundo */
-      left: 10px; /* Distância do rodapé em relação à esquerda */
-      display: flex; /* Utilizando o modelo de layout flexível */
-      flex-direction: column; /* Direção do layout flexível */
-      align-items: flex-start; /* Alinhamento dos itens no eixo principal */
-      color: white; /* Cor do texto do rodapé */
+    
+  }
+
+  /* creditos*/
+  .credits {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 5px 10px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    font-size: 18px;
+    margin-top: 20px; /* Adicionando margem superior para evitar sobreposição */
+    width: 100%; /* Definindo a largura total para ocupar a largura da tela */
+    box-sizing: border-box; /* Incluindo preenchimento e bordas na largura total */
+    text-align: center; /* Alinhando o texto ao centro */
+  }
+
+  /* css do button */
+  .btn {
+    --btn-gradient: var(--btn-gradient-from),var(--btn-gradient-to);
+    border: 0 none;
+    appearance: none;
+    border-radius: 9999px;
+    background-color: var(--btn-bg);
+    box-shadow: 0 0 2px 2px var(--btn-shadow), 0 0 4px 4px var(--btn-shadow), 0 0 8px 8px var(--btn-shadow);
+  }
+
+  .btn,
+  .btn * {
+    box-sizing: border-box;
+  }
+
+  .btn-inner {
+    position: relative;
+    border-radius: inherit;
+    border: 1px solid transparent;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    min-width: 10rem;
+    padding: 1.5rem 2rem;
+    overflow: hidden;
+    color: var(--btn-text-color);
+  }
+
+  .btn-label {
+    position: absolute;
+    bottom: 1px;
+    left: 1px;
+    right: 1px;
+    top: 1px;
+    border-radius: inherit;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--btn-bg);
+    background-image: linear-gradient(to bottom,var(--btn-gradient));
+  }
+
+  .btn-blur {
+    position: absolute;
+    bottom: 1px;
+    left: 1px;
+    right: 1px;
+    top: 1px;
+    z-index: 0;
+    transform: scaleX(3.5);
+    filter: blur(6px);
+  }
+
+  .btn-blur:before {
+    --gradient: var(--btn-color-from), var(--btn-color), var(--btn-color-to);
+    --transition: 5s;
+    content: "";
+    position: absolute;
+    z-index: 0;
+    top: 50%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: conic-gradient(var(--gradient));
+    animation: turn var(--transition) linear infinite;
+  }
+
+  .btn:hover,
+  .btn:active {
+    transition: transform .5s ease-in-out 0s;
+    transform: translateY(-1px);
+  }
+
+  .btn:active .btn-blur:before {
+    --transition: 2s;
+  }
+
+  .btn--primary {
+    --btn-bg: #111111;
+    --btn-gradient-from: #111111;
+    --btn-gradient-to: rgba(255, 255, 255, 0.1);
+    --btn-text-color: #ffffff;
+    --btn-color: #5f17d4;
+    --btn-color-from: #c6a3ff;
+    --btn-color-to: #966ed8;
+    --btn-shadow: #5f17d42d;
+  }
+
+  @keyframes turn {
+    0% {
+      transform: translateY(-50%) rotate(0deg)
+    }
+
+    to {
+      transform: translateY(-50%) rotate(1turn)
     }
   }
+
+  /* button Instagram*/
+  .Btn {
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition-duration: .4s;
+    cursor: pointer;
+    position: relative;
+    background: #f09433;
+    background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+    overflow: hidden;
+  }
+  /* titulo*/
+  .svgIcon {
+    transition-duration: .3s;
+  }
+
+  .svgIcon path {
+    fill: white;
+  }
+
+  .text {
+    position: absolute;
+    color: rgb(255, 255, 255);
+    width: 120px;
+    font-weight: 600;
+    opacity: 0;
+    transition-duration: .4s;
+  }
+
+  .Btn:hover {
+    width: 110px;
+    transition-duration: .4s;
+    border-radius: 30px;
+  }
+
+  .Btn:hover .text {
+    opacity: 1;
+    transition-duration: .4s;
+  }
+
+  .Btn:hover .svgIcon {
+    opacity: 0;
+    transition-duration: .3s;
+  }
+  @keyframes animate8345 {
+  0%,100% {
+    filter: hue-rotate(0deg);
+  }
+
+  50% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+.loader {
+  color: rgb(0, 0, 0);
+  background: linear-gradient(to right, #2d60ec, #3ccfda);
+  font-size: 30px;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  animation: animate8345 9s linear infinite;
+  font-weight: bold;
+}
+/*gif titulo*/
+
+
 </style>
 </head>
 <body>
-<h1>Projetos do Kevyn</h1> <!-- Título da página -->
+  
+  <div class="loader">Projetos do Kevyn</div> <!-- Título da página -->
+
 <div class="photo-container"> <!-- Container das fotos -->
   <img src="foto/kuromi.gif" alt="Foto do Kevyn"> <!-- Foto 1 -->
   <img src="foto/projetos.png" alt="Outra foto do Kevyn" style="width: 300px;"> <!-- Foto 2 -->
@@ -108,22 +272,41 @@
     Olá seja bem vindo aos meu projetos! <!-- Subtítulo -->
   </h2>
 </div>
-<div class="container"> <!-- Container das caixas de link -->
-  <a class="link-box" href="http://anime.tsukiscarso.shop" target="_blank">
-    Calculadora <!-- Link 1 -->
-  </a>
-  <a class="link-box" href="https://kscarso.github.io/mesa/" target="_blank">
-    mesa farta <!-- Link 2 -->
-  </a>
+<div class="botões"> <!-- Container das caixas de link -->
+
+  <a href="http://anime.tsukiscarso.shop" target="_blank"><button class="btn btn--primary">
+
+    <span class="btn-inner">
+      <span class="btn-label">
+        Calculadora
+      </span>
+      <span class="btn-blur" aria-hidden=""></span>
+    </span>
+    
+  </button></a>
+   <!-- Link 1 -->
+ 
+  <a href="https://kscarso.github.io/mesa/" target="_blank"><button class="btn btn--primary">
+
+    <span class="btn-inner">
+      <span class="btn-label">
+        Mesa Farta
+      </span>
+      <span class="btn-blur" aria-hidden=""></span>
+    </span>
+    
+  </button></a>
+   <!-- Link 2 -->
+   
+  
 </div>
- <!-- Linha horizontal -->
-<div class="footer"> <!-- Rodapé -->
-  <p>© tsukiscarso</p> <!-- Texto de copyright -->
-  <div style="display: flex; align-items: center;">
-    <p style="margin-right: 10px;">Construído por Kevyn Scarso</p> <!-- Texto "Construído por Kevyn Scarso" -->
-    <a href="https://www.instagram.com/kscarso.wttx" target="_blank">
-      <img src="foto/instagram.png" alt="Instagram" style="width: 20px;"> <!-- Ícone do Instagram -->
-    </a>
+ <!-- creditos -->
+ <div class="credits"> <p>©tsukiscarso</p> | Construído por Kevyn Scarso  <!-- Texto "Construído por Kevyn Scarso" -->
+
+    <center> <a href="https://www.instagram.com/kscarso.wttx" target="_blank" rel="noopener noreferrer"> <button class="Btn">
+      <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 448 512" class="svgIcon"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path></svg>
+      <span class="text">Instagram</span>
+    </button> </a> </center>
   </div>
 </div>
 </body>
